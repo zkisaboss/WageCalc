@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Wage Calculator</title>
+   </head>
+   <body>
+      <h1>How many units you can buy per wage</h1>
+      <table border="1" cellpadding="5">
+         <tr>
+            <th>Item</th>
+            <th>Price (USD)</th>
+            <th>Units per Hour</th>
+            <th>Units per Week (PT)</th>
+            <th>Units per Week (FT)</th>
+         </tr>
+         {% for entry in items %}
+         <tr>
+            <td>{{ entry.item }}</td>
+            <td>{{ "%.2f"|format(entry.price) }}</td>
+            <td>{{ "%.2f"|format(entry.hourly_units) }}</td>
+            <td>{{ "%.2f"|format(entry.weekly_units_pt) }}</td>
+            <td>{{ "%.2f"|format(entry.weekly_units_ft) }}</td>
+         </tr>
+         {% endfor %}
+      </table>
+   </body>
+</html>

@@ -7,3 +7,4 @@ app = Flask(__name__)
 def index():
     bls_data = fetch_bls_data()
     items = process_bls_data(bls_data)
+    return render_template("index.html", items=items)
